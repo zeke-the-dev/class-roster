@@ -5,6 +5,7 @@ using namespace std;
 #include <iostream>
 #include <string>
 #include "student.h"
+#include "degree.h"
 
 namespace student {
 
@@ -13,14 +14,16 @@ namespace student {
     }
 
     //parameterized constructor definition
-    student::student(string studentId, string firstName, string lastName, string emailAddress, string age, string completionDays[3], string degreeProgram) {
+    student::student(string studentId, string firstName, string lastName, string emailAddress, int age,  int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
         studentId = this->studentId;
         firstName = this->firstName;
         lastName = this->lastName;
         emailAddress = this->emailAddress;
         age = this->age;
-        completionDays = this->daysToCompletion;
         degreeProgram = this->degreeProgram;
+        this->daysToCompletion[0] = daysInCourse1;
+        this->daysToCompletion[1] = daysInCourse2;
+        this->daysToCompletion[2] = daysInCourse3;
     }
 
     //accessor method definitions:
@@ -40,19 +43,15 @@ namespace student {
         return this->emailAddress;
     }
 
-    string student::getAge(){
+    int student::getAge(){
         return this->age;
     }
 
-    string student::getDaysToCompletion(){
-        string days;
-        for(string d: this->daysToCompletion){
-            days = d + ", ";
-        }
-        return days;
+    int* student::getDaysToCompletion(){
+        return this->daysToCompletion;
     }
 
-    string student::getDegreeProgram(){
+    DegreeProgram student::getDegreeProgram(){
         return this->degreeProgram;
     }
 
@@ -73,15 +72,15 @@ namespace student {
         this->emailAddress = newEmailAddress;
     }
 
-    void student::setAge(string newAge){
+    void student::setAge(int newAge){
         this->age = newAge;
     }
 
-    void student::setDegreeProgram(string newDegreeProgram){
+    void student::setDegreeProgram(DegreeProgram newDegreeProgram){
         this->degreeProgram = newDegreeProgram;
     }
 
-    void student::setCompletionDays(int pos, string days){
+    void student::setCompletionDays(int pos, int days){
         this->daysToCompletion[pos] = days;
     }
 

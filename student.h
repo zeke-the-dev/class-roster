@@ -4,6 +4,7 @@
 using namespace std;
 #include <iostream>
 #include <string>
+#include "degree.h"
 #ifndef CLASS_ROSTER_STUDENT_H
 #define CLASS_ROSTER_STUDENT_H
 
@@ -18,9 +19,9 @@ namespace student {
             string firstName;
             string lastName;
             string emailAddress;
-            string age;
-            string degreeProgram;
-            string daysToCompletion[3];
+            int age;
+            DegreeProgram degreeProgram;
+            int daysToCompletion[3]; //days spent in each course
 
         public:
             string print();
@@ -30,24 +31,24 @@ namespace student {
             string getFirstName();
             string getLastName();
             string getEmailAddress();
-            string getAge();
-            string getDaysToCompletion();
-            string getDegreeProgram();
+            int getAge();
+            int * getDaysToCompletion();
+            DegreeProgram getDegreeProgram();
 
             //mutator method declaration (requirement D.2.B):
             void setStudentId(string newId);
             void setFirstName(string newFirstName);
             void setLastName(string newLastName);
             void setEmailAddress(string newEmailAddress);
-            void setAge(string newAge);
-            void setDegreeProgram(string newDegreeProgram);
-            void setCompletionDays(int pos, string days);
+            void setAge(int newAge);
+            void setDegreeProgram(DegreeProgram newDegreeProgram);
+            void setCompletionDays(int pos, int days);
 
             //default constructor declaration (requirement D.2.D):
             student();
 
             //parameterized constrictor declaration (requirement D.2.D):
-            student(string studentId, string firstName, string lastName, string emailAddress, string age, string completionDays[3], string degreeProgram);
+            student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
 
 
     };
