@@ -1,4 +1,4 @@
-# Install script for directory: /home/ezekielnwafor/Documents/wgu_code_projects/c867/class_roster
+# Install script for directory: /home/zeke/class-roster
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ezekielnwafor/Documents/wgu_code_projects/c867/class_roster/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zeke/class-roster/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
