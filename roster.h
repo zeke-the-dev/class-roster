@@ -12,12 +12,11 @@ namespace roster {
 
     class roster {
 
-        //generic constructor declaration
-        roster();
-
 
         //public function declarations
         public:
+            int rosterCt = 0;
+
             student::student* classRosterArray[5];
 
             void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram);
@@ -32,7 +31,12 @@ namespace roster {
 
             void printByDegreeProgram(DegreeProgram degreeProgram);
 
+            void parse(string studentData);
 
+            ~roster();
+
+            //generic constructor declaration
+            roster();
     };
 
 } // roster
