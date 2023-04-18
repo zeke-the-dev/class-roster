@@ -1,9 +1,5 @@
 #include <iostream>
-#include <string>
 #include "roster.h"
-#include "student.h"
-#include "degree.h"
-
 using namespace std;
 
 int main() {
@@ -27,7 +23,7 @@ int main() {
         classRoster.printAverageDaysInCourse(classRoster.classRosterArray[s]->getStudentId());
     }
 
-    classRoster.printByDegreeProgram(SOFTWARE);
+    classRoster.printByDegreeProgram(DegreeProgram::DegreeProgram::SOFTWARE);
 
     classRoster.remove("A3");
 

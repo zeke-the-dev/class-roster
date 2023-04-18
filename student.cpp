@@ -1,11 +1,11 @@
 //
 // Created by ezekielnwafor on 4/8/23.
 //
-using namespace std;
 #include <iostream>
-#include <string>
+#include <iomanip>
 #include "student.h"
-#include "degree.h"
+
+using namespace std;
 
 namespace student {
 
@@ -14,13 +14,13 @@ namespace student {
     }
 
     //parameterized constructor definition
-    student::student(string studentId, string firstName, string lastName, string emailAddress, int age,  int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
-        studentId = this->studentId;
-        firstName = this->firstName;
-        lastName = this->lastName;
-        emailAddress = this->emailAddress;
-        age = this->age;
-        degreeProgram = this->degreeProgram;
+    student::student(string studentId, string firstName, string lastName, string emailAddress, int age,  int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram::DegreeProgram degreeProgram) {
+        this->studentId = studentId;
+        this->firstName = firstName;
+        this->lastName = lastName;
+        this->emailAddress = emailAddress;
+        this->age = age;
+        this->degreeProgram = degreeProgram;
         this->daysToCompletion[0] = daysInCourse1;
         this->daysToCompletion[1] = daysInCourse2;
         this->daysToCompletion[2] = daysInCourse3;
@@ -51,7 +51,7 @@ namespace student {
         return this->daysToCompletion;
     }
 
-    DegreeProgram student::getDegreeProgram(){
+    DegreeProgram::DegreeProgram student::getDegreeProgram(){
         return this->degreeProgram;
     }
 
@@ -76,7 +76,7 @@ namespace student {
         this->age = newAge;
     }
 
-    void student::setDegreeProgram(DegreeProgram newDegreeProgram){
+    void student::setDegreeProgram(DegreeProgram::DegreeProgram newDegreeProgram){
         this->degreeProgram = newDegreeProgram;
     }
 
@@ -84,8 +84,14 @@ namespace student {
         this->daysToCompletion[pos] = days;
     }
 
-    string student::print(){
-        cout<<getStudentId()<<"\t"<<"First name:"<<getFirstName()<<"Last Name:"<<getLastName()<<"\t"<<"Age:"<<getAge()<<"\t"<<"daysInCourse:"<<"{"<<getDaysToCompletion()<<"}"<<"\t"<<"Degree Program:"<<getDegreeProgram()<<endl;
+    void student::print(){
+        cout<<this->getStudentId()<<"\t"
+        <<"First name: "<<this->getFirstName()<<"\t"
+        <<"Last Name: "<<this->getLastName()<<"\t"
+        <<"Email Address: "<<this->getEmailAddress()<<"\t"
+        <<"Age: "<<this->getAge()<<"\t"
+        <<" daysInCourse: "<<"{"<<daysToCompletion[0]<<", "<<daysToCompletion[1]<<", "<<daysToCompletion[2]<<"}"<<"\t"
+        <<"Degree Program: "<<this->getDegreeProgram()<<endl;
     }
 
 

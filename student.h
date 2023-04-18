@@ -1,10 +1,9 @@
 //
 // Created by ezekielnwafor on 4/8/23.
 //
-using namespace std;
-#include <iostream>
 #include <string>
 #include "degree.h"
+using std::string;
 #ifndef CLASS_ROSTER_STUDENT_H
 #define CLASS_ROSTER_STUDENT_H
 
@@ -20,11 +19,11 @@ namespace student {
             string lastName;
             string emailAddress;
             int age;
-            DegreeProgram degreeProgram;
+            DegreeProgram::DegreeProgram degreeProgram;
             int daysToCompletion[3]; //days spent in each course
 
         public:
-            string print();
+            void print();
 
             //accessor method declaration (requirement D.2.A):
             string getStudentId();
@@ -33,7 +32,7 @@ namespace student {
             string getEmailAddress();
             int getAge();
             int * getDaysToCompletion();
-            DegreeProgram getDegreeProgram();
+            DegreeProgram::DegreeProgram getDegreeProgram();
 
             //mutator method declaration (requirement D.2.B):
             void setStudentId(string newId);
@@ -41,14 +40,14 @@ namespace student {
             void setLastName(string newLastName);
             void setEmailAddress(string newEmailAddress);
             void setAge(int newAge);
-            void setDegreeProgram(DegreeProgram newDegreeProgram);
+            void setDegreeProgram(DegreeProgram::DegreeProgram newDegreeProgram);
             void setCompletionDays(int pos, int days);
 
             //default constructor declaration (requirement D.2.D):
             student();
 
             //parameterized constrictor declaration (requirement D.2.D):
-            student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
+            student(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram::DegreeProgram degreeProgram);
 
 
     };
