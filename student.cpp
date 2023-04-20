@@ -14,7 +14,7 @@ namespace student {
     }
 
     //parameterized constructor definition
-    student::student(string studentId, string firstName, string lastName, string emailAddress, int age,  int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram::DegreeProgram degreeProgram) {
+    student::student(string studentId, string firstName, string lastName, string emailAddress, int age,  int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
         this->studentId = studentId;
         this->firstName = firstName;
         this->lastName = lastName;
@@ -51,9 +51,10 @@ namespace student {
         return this->daysToCompletion;
     }
 
-    DegreeProgram::DegreeProgram student::getDegreeProgram(){
+    DegreeProgram student::getDegreeProgram(){
         return this->degreeProgram;
     }
+
 
     //Mutator method definitions:
     void student::setStudentId(string newId){
@@ -76,7 +77,7 @@ namespace student {
         this->age = newAge;
     }
 
-    void student::setDegreeProgram(DegreeProgram::DegreeProgram newDegreeProgram){
+    void student::setDegreeProgram(DegreeProgram newDegreeProgram){
         this->degreeProgram = newDegreeProgram;
     }
 
@@ -91,7 +92,7 @@ namespace student {
         <<"Email Address: "<<this->getEmailAddress()<<"\t"
         <<"Age: "<<this->getAge()<<"\t"
         <<" daysInCourse: "<<"{"<<daysToCompletion[0]<<", "<<daysToCompletion[1]<<", "<<daysToCompletion[2]<<"}"<<"\t"
-        <<"Degree Program: "<<this->getDegreeProgram()<<endl;
+        <<"Degree Program: "<< programListings[this->getDegreeProgram()]<<endl;
     }
 
 

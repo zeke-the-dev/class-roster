@@ -23,7 +23,7 @@ int main() {
         classRoster.printAverageDaysInCourse(classRoster.classRosterArray[s]->getStudentId());
     }
 
-    classRoster.printByDegreeProgram(DegreeProgram::DegreeProgram::SOFTWARE);
+    classRoster.printByDegreeProgram(DegreeProgram::SOFTWARE);
 
     classRoster.remove("A3");
 

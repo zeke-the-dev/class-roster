@@ -7,6 +7,7 @@
 #include <string>
 #include "student.h"
 
+
 using namespace std;
 
 
@@ -41,7 +42,7 @@ namespace roster {
         int daysInClassThree;
 
         //student's enrolled program
-        DegreeProgram::DegreeProgram enrolledProgram;
+        DegreeProgram enrolledProgram;
 
 
         int rhs = studentData.find(",");
@@ -91,7 +92,7 @@ namespace roster {
 
     //add a student record to a roster
     void roster::add(std::string studentID, std::string firstName, std::string lastName, std::string emailAddress,
-                     int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram::DegreeProgram degreeprogram) {
+                     int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
 
         //make sure the roster isn't full
         if (rosterCt < 5)
@@ -186,7 +187,7 @@ namespace roster {
         }
     }
 
-    void roster::printByDegreeProgram(DegreeProgram::DegreeProgram degreeProgram) {
+    void roster::printByDegreeProgram(DegreeProgram degreeProgram) {
         for (int i = 0; i < 5; ++i) {
             if(classRosterArray[i]->getDegreeProgram() == degreeProgram){
                 classRosterArray[i]->print();
