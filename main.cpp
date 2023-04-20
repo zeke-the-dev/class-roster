@@ -4,6 +4,11 @@ using namespace std;
 
 int main() {
 
+    cout<<"Course: Scripting and Programming - Applications - C867"<<endl;
+    cout<<"Programming language: C++"<<endl;
+    cout<<"ID Number: 011022613"<<endl;
+    cout<<"Namw: Ezekiel Nwafor"<<endl<<endl;
+
     //array of student data. Personal info added to end (requirement a)
     const string studentData[] =
 
